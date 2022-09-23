@@ -1,31 +1,45 @@
-public class Contato{
-    private String email;
-    private String nome;
-    private Data dtNascimento;
-    private List<Telefone> telefones;
+public class Data{
+    private int dia;
+    private int mes;
+    private int ano;
 
-    public int getIdate(){
-        return this.dtNascimento;
+    public Data(int d, int  m, int a){
+        this.dia = d;
+        this.mes = m;
+        this.ano = a;
     }
 
-    public void adicionarTelefone(Telefone t){
-        telefones.Add(t);
+    public Data(){
+        int a, b, c = Console.ReadInt();
+        Data(a, b, c);
     }
 
-    public String getTelefonePrincipal(){
-        foreach (var i in telefones){
-            if(this.principal == true){
-                return this.Telefone;
-            }
-        }
+    public void setDia(int d){
+        this.dia = d;
     }
 
-    public override String toString(){
-        String perfil = this.nome + ", " + this.email + ", " + ToString(dtNascimento) + ", " + getTelefonePrincipal();
-        return perfil;
+    public void setMes(int m){
+        this.mes = d;
     }
 
-    public override bool Equals(object obj){
-        
+    public void setAno(int a){
+        this.ano = a;
+    }
+
+    public int getDia(){
+        return this.dia;
+    }
+
+    public int getMes(){
+        return this.mes;
+    }
+
+    public int getAno(){
+        return this.ano;
+    }
+
+    public override String ToString(){
+        String stringdata = dia + "/" + mes + "/" ano;
+        return stringdata;
     }
 }
