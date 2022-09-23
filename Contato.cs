@@ -1,45 +1,48 @@
-public class Data{
-    private int dia;
-    private int mes;
-    private int ano;
+public class Contato{
+    private String email;
+    private String nome;
+    private Data dtNascimento;
+    private List<Telefone> telefones;
 
-    public Data(int d, int  m, int a){
-        this.dia = d;
-        this.mes = m;
-        this.ano = a;
+    public Contato(String e, String n, Data dtn){
+        this.email = e;
+        this.nome = n;
+
     }
 
-    public Data(){
-        int a, b, c = Console.ReadInt();
-        Data(a, b, c);
+    public Contato(){
+        String a, b = Console.ReadString();
+        Data c = Data();
+        Contato(a, b, c);
     }
 
-    public void setDia(int d){
-        this.dia = d;
+    public void setEmail(String e){
+        this.e = email;
     }
 
-    public void setMes(int m){
-        this.mes = d;
+
+    public int getIdate(){
+        return this.dtNascimento;
     }
 
-    public void setAno(int a){
-        this.ano = a;
+    public void adicionarTelefone(Telefone t){
+        telefones.Add(t);
     }
 
-    public int getDia(){
-        return this.dia;
+    public String getTelefonePrincipal(){
+        foreach (var i in telefones){
+            if(this.principal == true){
+                return this.Telefone;
+            }
+        }
     }
 
-    public int getMes(){
-        return this.mes;
+    public override String toString(){
+        String perfil = this.nome + ", " + this.email + ", " + ToString(dtNascimento) + ", " + getTelefonePrincipal();
+        return perfil;
     }
 
-    public int getAno(){
-        return this.ano;
-    }
-
-    public override String ToString(){
-        String stringdata = dia + "/" + mes + "/" ano;
-        return stringdata;
+    public override bool Equals(object obj){
+        return this.Contato.Equals(((Contato)obj));
     }
 }
